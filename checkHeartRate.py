@@ -37,7 +37,7 @@ import subprocess
 # percent = int(round(numb))
 # battery = str(percent) + "%"
 # print 'Battery: ' + battery 
-=======
+
 bat = subprocess.Popen("nc -q 0 127.0.0.1 8423", 
 stdin=subprocess.PIPE, stdout=subprocess.PIPE, 
 stderr=subprocess.PIPE, shell=True)

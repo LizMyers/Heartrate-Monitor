@@ -28,6 +28,7 @@ from PIL import Image, ImageDraw, ImageFont
 #-------------------------------
 import subprocess
 ##Monitor Battery level in terminal
+<<<<<<< HEAD
 # bat = subprocess.Popen("nc -q 0 127.0.0.1 8423", 
 # stdin=subprocess.PIPE, stdout=subprocess.PIPE, 
 # stderr=subprocess.PIPE, shell=True)
@@ -37,6 +38,17 @@ import subprocess
 # percent = int(round(numb))
 # battery = str(percent) + "%"
 # print 'Battery: ' + battery 
+=======
+bat = subprocess.Popen("nc -q 0 127.0.0.1 8423", 
+stdin=subprocess.PIPE, stdout=subprocess.PIPE, 
+stderr=subprocess.PIPE, shell=True)
+batLevel = bat.communicate("get battery")
+result = batLevel[0] #result: 'battery: 24.5678\n'
+numb = float(result[9:-1])
+percent = int(round(numb))
+battery = str(percent) + "%"
+print 'Battery: ' + battery 
+>>>>>>> 06504ba515258bce44b8534e1c52b0bc7b86df9d
 
 ##init eInk Display 
 import sys
